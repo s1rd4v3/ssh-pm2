@@ -1,5 +1,7 @@
 FROM rastasheep/ubuntu-sshd
 
+MAINTAINER Dave Steck
+
 # Update
 RUN apt-get update
 # Install main dependencies
