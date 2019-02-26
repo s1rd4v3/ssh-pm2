@@ -12,7 +12,7 @@ RUN adduser web --home /web --disabled-password --gecos "Web User"
 RUN echo web:web | chpasswd
 
 # Prepare node installation
-RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 # Install nodejs
 RUN sudo apt-get install -y nodejs
 RUN ln -s nodejs node
