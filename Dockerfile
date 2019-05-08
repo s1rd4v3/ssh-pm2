@@ -1,7 +1,9 @@
 FROM debian:jessie-slim
 
+MAINTAINER Dave Steck
+
 # Install main dependencies
-RUN apt-get update && apt-get install apt-utils sudo curl gnupg2 sshpass openssh-server -y
+RUN apt-get update && apt-get install apt-utils sudo curl gnupg2 sshpass openssh-server rsync -y
 
 # Adding SSH web user
 RUN /usr/sbin/useradd -d /web -m -p $(echo "ChangeMe$" | openssl passwd -1 -stdin) -s /bin/bash web -c "Web User"
