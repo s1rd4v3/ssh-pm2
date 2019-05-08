@@ -3,13 +3,9 @@ FROM debian:jessie-slim
 # Install main dependencies
 RUN apt-get update && apt-get install apt-utils sudo curl gnupg2 sshpass openssh-server -y
 
-# Adding SFTP User
-RUN /usr/sbin/useradd -d /home/deb -m -p $(echo "ChangeMe$" | openssl passwd -1 -stdin) -s /bin/bash deb
-RUN usermod -aG sudo deb
-
-# Adding Web User
-RUN adduser web --home /web --disabled-password --gecos "Web User"
-RUN echo web:web | chpasswd
+# Adding SSH web user
+RUN /usr/sbin/useradd -d /web -m -p $(echo "ChangeMe$" | openssl passwd -1 -stdin) -s /bin/bash web -c "Web User"
+RUN usermod -aG sudo web
 
 # Prepare node installation
 RUN curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
