@@ -26,4 +26,4 @@ RUN chmod +x entrypoint.sh
 EXPOSE 80 443 22
 
 # Start up ssh and exec pm2 process file
-ENTRYPOINT service ssh restart && bash
+ENTRYPOINT ["/entrypoint.sh"]
