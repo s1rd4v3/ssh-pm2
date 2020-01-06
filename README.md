@@ -1,6 +1,8 @@
 # ssh-pm2
 Docker image to manage bundled meteor with pm2
 
+__You have to define the environment variable `PM2_START_FILE` which points to the pm2 process file.__
+
 ## Example pm2 process file for Meteor Apps (in YAML)
 ```yml
 ---
