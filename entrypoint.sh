@@ -6,7 +6,7 @@ then
   echo "Please define PM2_START_FILE env"
   bash
 else
-  pm2-docker start $PM2_START_FILE --no-auto-exit
+  pm2-runtime start $PM2_START_FILE --no-auto-exit
 fi
 
 
