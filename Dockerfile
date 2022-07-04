@@ -10,7 +10,7 @@ RUN /usr/sbin/useradd -d /web -m -p $(echo "ChangeMe$" | openssl passwd -1 -stdi
 RUN usermod -aG sudo web
 
 # Prepare node installation
-RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 # Install nodejs
 RUN sudo apt-get install -y nodejs
 RUN ln -s nodejs node
