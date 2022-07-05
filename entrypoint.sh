@@ -1,5 +1,11 @@
 #!/bin/sh
+
+# Start SSH server
 service ssh start
+
+# reown home + app folder if linked volume is mounted
+chown -R app:app /home/app
+chown -R app:app /app
 
 if [ -z "$PM2_START_FILE" ]
 then
