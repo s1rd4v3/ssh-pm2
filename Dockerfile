@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:14
 
 # Install main dependencies
 RUN apt-get update && apt-get install apt-utils sudo curl gnupg2 sshpass openssh-server rsync vim -y
